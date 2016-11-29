@@ -201,6 +201,8 @@ class HashGenerator extends Disguise
 ```
 
 - [CSS Code Style]()
+
+###### This example of codification is following the my codestyles. This code is of my project '[bootstyle](https://github.com/lleocastro/bootstylle)'.
 ```css
 @charset "UTF-8";
  
@@ -332,6 +334,8 @@ th {
 ```
 
 - [JS Code Style]()
+
+###### This example of codification is following the my codestyles. This code is of my project '[flappy-bird](https://github.com/lleocastro/flappy-bird)'.
 ```js
 // Debug mode of the game
 var debugMode = false;
