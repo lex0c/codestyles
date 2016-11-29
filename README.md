@@ -20,80 +20,138 @@ The idea of this repository is be a complete code guide. For myself and other de
 > Here are some previews of the style. Click in the link to go complete guide.
 
 - [PHP Code Style]()
+
+###### This example of codification is following the my codestyles. This code is of my project '[encryptor](https://github.com/lleocastro/encryptor)'.
 ```php
-<?php namespace System\Core\Loaders;
+<?php namespace Encryptor\Suite;
 
 /*
  ===========================================================================
- = Preview About Class Content
+ = Hash Generator
  ===========================================================================
  =
- = Brief description about functionality of class...
+ = Generates a 107 bits hash for encoding passwords and data that does not 
+ = need to retrieve the value retrieved.
  = 
  */
 
-use \System\IO\FileReader;
-use \package\subpackage\IRunnable;
-use \RuntimeException;
+use \Encryptor\Suite\Disguise;
+use \InvalidArgumentException;
 
 /**
- * PHPDoc of Class
- * ...
+ * PHP Hard Hash Generator
+ * Safety against scripts injections
+ * Generates an encrypted hash of 107 byte
+ * @link https://github.com/lleocastro/encryptor
+ * @license https://github.com/lleocastro/encryptor/blob/master/LICENSE
+ * @author Leonardo Carvalho <leonardo_carvalho@outlook.com>
+ * @copyright 2016 MIT License
+ * @package \Encryptor
  */
-class LoggerBoot extends FileReader implements IRunnable
+class HashGenerator extends Disguise
 {
     /**
-     * The status of reading file
-     * @var boolean
-     */
-    private $status = false;
-    
-    /**
-     * File title for search
+     * Encryption prefix
+     * @see http://www.php.net/security/crypt_blowfish.php
      * @var string
      */
-    private $file = '';
-   
-    /**
-     * Path for files dir
-     * @var string
-     */
-    private $path = ROOT_APP_JOYN;
-    
-    /**
-     * For variables in same group define the equals aligned
-     * @var array
-     */
-    private $sometinhg       = [];
-    private $otherSomething  = [];
-    private $theExampleVar   = [];
-    
-    /**
-     * Function for sintaxe example
-     * @param string [optional desc]
-     * @param boolean [optional desc]
-     * @return void 
-     */
-    public function example($file, $status = false)
-    {
-        if(condition..):
-            //Code here...
-        endif;
-	
-        for(loop..):
-            //Code here...
-        endfor;
-	
-        switch(var..):
-            //Code here...
-        endswitch;
-	
-        //etc...
-	
-    }
-    
-}
+    protected $prefix = '2a';
 
+    /**
+     * Salt [MTc2MzMxNDQ4NTdmZDg4Yz]
+     * @see http://www.php.net/security/crypt_blowfish.php
+     * @var string
+     */
+    private $salt = '';
+
+    /**
+     * Custo default '8' [4 <> 31]
+     * @see http://www.php.net/security/crypt_blowfish.php
+     * @var int
+     */
+    protected $cust = 8;
+
+    /**
+     * Secret hash for hard encryption
+     * @var string
+     */
+    private $secret = [];
+    private $key = '';
+
+
+    /**
+     * Encrypter Factory
+     * @param string $prefix
+     * @param string $salt
+     * @param int $cust
+     */
+    public function __construct(string $prefix = '', string $salt = '', int $cust = 8)
+    {
+        if(($cust < 4) || ($cust > 31)):
+            throw new InvalidArgumentException('Arguments not valid!');
+        endif;
+
+    	$prefix = trim(htmlentities(strip_tags($prefix)));
+    	$salt   = trim(htmlentities(strip_tags($salt)));
+    	$cust   = htmlentities(strip_tags($cust));
+    	
+        $this->prefix = ((empty($p))?'2a':$prefix);
+    	$this->salt   = ((empty($s))?$this->generateHash():$salt);
+        $this->cust   = ((empty($c))?8:$cust);
+    }
+
+    /**
+     * Encrypt Generate
+     * @param string $value
+     * @return string encrypted
+     */
+    public function encode(string $value):string
+    {
+        return str_replace('=', '', strrev($this->obscure(
+            crypt(
+        	    (string) trim(htmlentities(strrev($value))), 
+        	    $this->generateHash()
+            )
+        )));
+    }
+
+    /**
+     * Compare hashes
+     * @param string $value
+     * @param string $hash
+     * @return boolean
+     */
+    public function isEquals(string $value, string $hash):bool
+    {
+	    $v = (string) trim(htmlentities(strrev($value)));
+	    $h = $this->illumin((string) trim(htmlentities(strrev($hash))));
+        
+        if(crypt($v, $h) === $h):
+            return true;
+        endif;
+
+        return false;
+    }
+
+    /**
+     * Generate a random salt
+     * @return aleatory string encoded
+     */
+	protected function generateSalt():string
+	{
+        return substr(base64_encode(uniqid(mt_rand(), true)), 0, 22);
+	}
+
+    /**
+     * Build a hash string for crypt
+     * @return formated string
+     */
+	protected function generateHash():string
+	{
+        return sprintf('$%s$%02d$%s$', $this->prefix, $this->cust, $this->generateSalt());
+	}
+
+}
 ```
 
 - [HTML Code Style]()
