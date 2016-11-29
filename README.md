@@ -9,9 +9,9 @@ The following document describes the rules of writing in development languages t
 
 The idea of this repository is be a complete code guide. For myself and other developers who participate in my projects follow the same coding pattern.
 
-#### As this is a new document, some rules may not have been applied in old projects.
+This is a live document and changes can occur at any time, for this reason I recommend that from 'watching' in this repository.
 
-###### *This is a live document and changes can occur at any time.
+#### *As this is a new document, some rules may not have been applied in old projects.
 
 <hr>
 
