@@ -1,4 +1,4 @@
-# Styles Guide
+# My Code Styles Guide
 ================
 
 > Ninety percent of these styles will follow the best practices recommended worldwide, with some highlights in specific points that i altered..
@@ -19,7 +19,7 @@ The idea of this repository is be a complete code guide. For myself and other de
 
 > Here are some previews of the style. Click in the link to go complete guide.
 
-- [PHP Style]()
+- [PHP Code Style]()
 ```php
 <?php namespace System\Core\Loaders;
 
@@ -96,7 +96,7 @@ class LoggerBoot extends FileReader implements IRunnable
 
 ```
 
-- [HTML Style]()
+- [HTML Code Style]()
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -120,12 +120,12 @@ class LoggerBoot extends FileReader implements IRunnable
 </html>
 ```
 
-- [CSS Style]()
+- [CSS Code Style]()
 ```css
 <!-- ... -->
 ```
 
-- [JS Style]()
+- [JS Code Style]()
 ```js
 //...
 ```
