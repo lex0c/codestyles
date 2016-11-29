@@ -532,7 +532,7 @@ function inLoop(){
 
 }
 ```
-
+- The above codes are a sample of my coding pattern following the codestyles. These codes are real from my projects.
 
 ## To contributions 
 
