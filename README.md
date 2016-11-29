@@ -9,9 +9,9 @@ The following document describes the rules of writing in development languages t
 
 The idea of this repository is be a complete code guide. For myself and other developers who participate in my projects follow the same coding pattern.
 
-This is a live document and changes can occur at any time, for this reason I recommend that from 'watching' in this repository.
+#### This is a live document and changes can occur at any time, for this reason I recommend that from 'watching' in this repository.
 
-#### *As this is a new document, some rules may not have been applied in old projects.
+###### *As this is a new document, some rules may not have been applied in old projects.
 
 <hr>
 
@@ -21,8 +21,79 @@ This is a live document and changes can occur at any time, for this reason I rec
 
 - [PHP Style]()
 ```php
-<?php namespace package\subpackage;
-// ...
+<?php namespace System\Core\Loaders;
+
+/*
+ ===========================================================================
+ = Preview About Class Content
+ ===========================================================================
+ =
+ = Brief description about functionality of class...
+ = 
+ */
+
+use \System\IO\FileReader;
+use \package\subpackage\IRunnable;
+use \RuntimeException;
+
+/**
+ * PHPDoc of Class
+ * ...
+ */
+class LoggerBoot extends FileReader implements IRunnable
+{
+    /**
+     * The status of reading file
+     * @var boolean
+     */
+    private $status = false;
+    
+    /**
+     * File title for search
+     * @var string
+     */
+    private $file = '';
+   
+    /**
+     * Path for files dir
+     * @var string
+     */
+    private $path = ROOT_APP_JOYN;
+    
+    /**
+     * For variables in same group define the equals aligned
+     * @var array
+     */
+    private $sometinhg       = [];
+    private $otherSomething  = [];
+    private $theExampleVar   = [];
+    
+    /**
+     * Function for sintaxe example
+     * @param string [optional desc]
+     * @param boolean [optional desc]
+     * @return void 
+     */
+    public function example($file, $status = false)
+    {
+        if(condition..):
+            //Code here...
+        endif;
+	
+        for(loop..):
+            //Code here...
+        endfor;
+	
+        switch(var..):
+            //Code here...
+        endswitch;
+	
+        //etc...
+	
+    }
+    
+}
+
 ```
 
 - [HTML Style]()
