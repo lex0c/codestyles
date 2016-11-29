@@ -15,6 +15,51 @@ The idea of this repository is be a complete code guide. For myself and other de
 
 <hr>
 
+## Summary
+
+> Here are some previews of the style. Click in the link to go complete guide.
+
+- [PHP Style]()
+```php
+<?php namespace package\subpackage;
+// ...
+```
+
+- [HTML Style]()
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="lleocastro"/>
+  <meta name="description" content="HTML structure example for my style guide"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="index, follow"/>
+
+  <link rel="icon" type="image/png" href="assets/logo.png"/>
+  <link rel="stylesheet" href="css/example.css"/>
+	
+  <title>HTML Structure Example</title>
+</head>
+<body>
+  <main>
+    <p>Hello World!</p>
+  </main>
+</body>
+</html>
+```
+
+- [CSS Style]()
+```css
+<!-- ... -->
+```
+
+- [JS Style]()
+```js
+//...
+```
+
+
 ## To contributions 
 
 Please, see [doc for contribute](https://github.com/lleocastro/styles-guide/blob/master/CONTRIBUTE.md). Thanks!
