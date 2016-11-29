@@ -155,48 +155,57 @@ class HashGenerator extends Disguise
 ```
 
 - [HTML Code Style]()
+
+###### This example of codification is following the my codestyles. This code is of my project '[flappy-bird](https://github.com/lleocastro/flappy-bird)'
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">   
 <head>
-  <meta charset="UTF-8">
-  <meta name="author" content="lleocastro"/>
-  <meta name="description" content="HTML structure example for my style guide"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="robots" content="index, follow"/>
+    <meta charset="utf-8">
+    <meta name="description" content="Divirtam-se com esse jogo viciante e desafiador."/>
+    <meta name="author" content="lleocastro"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="robots" content="index, follow"/>
 
-  <link rel="icon" type="image/png" href="assets/logo.png"/>
-  <link rel="stylesheet" href="css/example.css"/>
-	
-  <title>HTML Structure Example</title>
+    <link rel="icon" type="image/png" href="assets/icon.png"/>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/style.min.css"/>
+
+    <title>Flappy Bird</title>
 </head>
 <body>
-  <main>
-    <p>Hello World!</p>
-    <ul>
-      <li>...</li>
-      <li>...</li>
-      <li>...</li>
-    </ul>
-    
-    <section>
-      <article>
-        
-        <header>
-          <h1>...</h1>
-          <p class= "tagline">...</p>
-        </header>
-	
-        <!-- Content -->
-	
-        <footer>
-	  ...
-        </footer>	
-      </article>
-    </section>
-    
-  </main>
+<!-- This code is old, so disregard the excessive use of 'ids', most 'ids' are used in JS -->
+<main id="background-pag" style="background-image: url('assets/background_pag.jpg');">
+    <div id="modal">
+        <section id="game-area">          
+            <section id="background-game" class="animated">
+                <section id="flight-area">
+                    <div id="ceiling" class="animated"></div>
+                    <div id="player" class="personage animated"></div>  
+                    <div id="score"></div>
+                    <div id="splash-screen"></div>
+                    <div id="scoreboard">
+                        <div id="medal"></div>
+                        <div id="current-score"></div>
+                        <div id="best-score"></div>
+                        <div id="restart"><img src="assets/scenery/restart.png" alt="restart game"></div>
+                    </div>
+                    <!-- The obstacles will appear here by means of an array -->
+                </section>
+            </section>            
+            <footer id="land" class="animated"></footer>
+        </section>
+    </div>
+</main>
 </body>
+    <!-- APIs and game logic -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/libs/jquery.transit.min.js"></script>
+    <script src="js/libs/buzz.min.js"></script>
+    <script src="js/logic.min.js"></script>
+    <script>
+        alert('Controllers: Mouse click or space key');
+    </script>
 </html>
 ```
 
